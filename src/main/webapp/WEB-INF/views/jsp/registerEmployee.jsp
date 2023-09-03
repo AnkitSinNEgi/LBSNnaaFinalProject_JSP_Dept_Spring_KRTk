@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -33,8 +34,13 @@
                 <form:input path="empName" type="text" placeholder="employee name" />
             </div>
             <div class="form-group">
-                Department ID:
-                <form:input path="empDeptId" type="text" placeholder="department ID" />
+                Department:
+                <form:select path="empDeptId">
+                    <form:option value="null">--Select Department--</form:option>
+                    <c:forEach var="department" items="${departments}">
+                        <option value="${department.deptId}">${department.deptName}</option>
+                    </c:forEach>
+                </form:select>
             </div>
             <div class="form-group">
                 Face ID:

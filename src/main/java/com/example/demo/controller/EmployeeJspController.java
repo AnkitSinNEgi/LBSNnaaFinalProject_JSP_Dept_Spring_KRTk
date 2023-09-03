@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Employee;
 import com.example.demo.repository.EmployeeRepository;
+import com.example.demo.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,14 +14,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
-
 @Controller
 @RequestMapping("/jsp")
 public class EmployeeJspController {
 
     @Autowired
     private EmployeeRepository employeeRepository;
+    
+    @Autowired
+    private DepartmentRepository departmentRepository;
 
     @GetMapping("/employees")
     public List<Employee> getAllEmployees() {
@@ -37,6 +39,7 @@ public class EmployeeJspController {
     public String showForm(Model model) {
         Employee employee = new Employee();
         model.addAttribute("employee", employee);
+        model.addAttribute("departments", departmentRepository.findAll());
         return "registerEmployee"; // Assuming you have a JSP view named "registerEmployee.jsp"
     }
 
