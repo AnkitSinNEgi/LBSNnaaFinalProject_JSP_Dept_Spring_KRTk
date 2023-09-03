@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
+
 @Controller
 @RequestMapping("/jsp")
 public class EmployeeJspController {
@@ -39,8 +41,10 @@ public class EmployeeJspController {
     }
 
     @PostMapping("/registerEmployee")
-    public String submitForm(@ModelAttribute("employee") Employee employee) {
+    public String submitForm(@ModelAttribute("employee") Employee employee, Model model) {
         employeeRepository.insert(employee);
-        return "register_success"; // Assuming you have a JSP view named "register_success.jsp"
+        model.addAttribute("employees", employeeRepository.findAll());
+        return "view-employees-success"; // Assuming you have a JSP view named "view-employees.jsp"
+//        return "register_success"; // Assuming you have a JSP view named "register_success.jsp"
     }
 }

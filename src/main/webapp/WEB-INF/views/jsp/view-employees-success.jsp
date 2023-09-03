@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <title>Employee List</title>
@@ -22,6 +23,7 @@
 <body>
     <div class="container">
         <h2>Employee List</h2>
+        <h6>Registered Employee Successfully</h6>
         <table border="1">
             <tr>
                 <th>Employee ID</th>

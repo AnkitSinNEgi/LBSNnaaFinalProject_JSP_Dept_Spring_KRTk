@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Register Employee</title>
-    <link href="webjars/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             background-color: #f0f0f0;
@@ -28,26 +27,14 @@
 <body>
     <div class="container">
         <h2>Register Employee</h2>
-        <form:form action="/jsp/registerEmployee" method="post" modelAttribute="employee">
-            <div class="form-group">
-                Employee ID:
-                <form:input path="empId" type="text" placeholder="employee ID" />
-            </div>
-            <div class="form-group">
+        <form:form action="/jsp/registerEmployee" method="post" modelAttribute="employee" >  
+        <div class="form-group">
                 Employee Name:
                 <form:input path="empName" type="text" placeholder="employee name" />
             </div>
             <div class="form-group">
                 Department ID:
                 <form:input path="empDeptId" type="text" placeholder="department ID" />
-            </div>
-            <div class="form-group">
-                In Time:
-                <form:input path="inTime" type="text" placeholder="in time" />
-            </div>
-            <div class="form-group">
-                Out Time:
-                <form:input path="outTime" type="text" placeholder="out time" />
             </div>
             <div class="form-group">
                 Face ID:
@@ -60,7 +47,5 @@
         <br>
         <a href="/jsp/viewEmployees">Back to Employee List</a>
     </div>
-    <script src="webjars/bootstrap/5.2.3/js/bootstrap.min.js"></script>
-    <script src="webjars/jquery/3.6.4/jquery.min.js"></script>
 </body>
 </html>

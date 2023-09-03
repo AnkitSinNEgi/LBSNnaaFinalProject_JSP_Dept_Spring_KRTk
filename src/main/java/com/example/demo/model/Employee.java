@@ -47,14 +47,10 @@ public class Employee {
 	}
 	
 	//Constructor with arguments
-	public Employee(Integer empId, String empName, Integer empDeptId, String inTime, String outTime,
-			String faceId) {
+	public Employee(String empName, Integer empDeptId, String faceId) {
 		super();
-		this.empId = empId;
 		this.empName = empName;
 		this.empDeptId = empDeptId;
-		this.inTime = inTime;
-		this.outTime = outTime;
 		this.faceId = faceId;
 	}
 	

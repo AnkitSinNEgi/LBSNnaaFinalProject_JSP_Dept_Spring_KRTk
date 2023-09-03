@@ -27,36 +27,25 @@
 </head>
 <body>
     <div class="container">
-        <h2>Register Employee</h2>
-        <form:form action="/jsp/registerEmployee" method="post" modelAttribute="employee">
-            <div class="form-group">
-                Employee ID:
-                <form:input path="empId" type="text" placeholder="employee ID" />
-            </div>
-            <div class="form-group">
-                Employee Name:
-                <form:input path="empName" type="text" placeholder="employee name" />
-            </div>
-            <div class="form-group">
-                Department ID:
-                <form:input path="empDeptId" type="text" placeholder="department ID" />
-            </div>
-            <div class="form-group">
-                In Time:
-                <form:input path="inTime" type="text" placeholder="in time" />
-            </div>
-            <div class="form-group">
-                Out Time:
-                <form:input path="outTime" type="text" placeholder="out time" />
-            </div>
-            <div class="form-group">
-                Face ID:
-                <form:input path="faceId" type="text" placeholder="face ID" />
-            </div>
-            <div class="form-group">
-                <form:button class="btn btn-success">Register</form:button>
-            </div>
-        </form:form>
+        <h2>Registered Employee Successfully</h2>
+        <table border="1">
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Department ID</th>
+                <th>In Time</th>
+                <th>Out Time</th>
+                <th>Face ID</th>
+            </tr>
+            <tr>
+                <td>${employee.empId}</td>
+                <td>${employee.empName}</td>
+                <td>${employee.empDeptId}</td>
+                <td>${employee.inTime}</td>
+                <td>${employee.outTime}</td>
+                <td>${employee.faceId}</td>
+            </tr>
+        </table>
         <br>
         <a href="/jsp/viewEmployees">Back to Employee List</a>
     </div>

@@ -33,8 +33,8 @@ public interface EmployeeRepository {
     @Delete("DELETE FROM employees WHERE emp_id = #{empId}")
     int deleteById(Integer empId);
 
-    @Insert("INSERT INTO employees(emp_name, emp_dept_id, in_time, out_time, face_id) " +
-            "VALUES (#{empName}, #{empDeptId}, #{inTime}, #{outTime}, #{faceId})")
+    @Insert("INSERT INTO employees(emp_name, emp_dept_id, face_id) " +
+            "VALUES (#{empName}, #{empDeptId}, #{faceId})")
     int insert(Employee employee);
 
     @Update("UPDATE employees SET emp_name=#{empName}, emp_dept_id=#{empDeptId}, " +
